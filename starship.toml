@@ -14,10 +14,9 @@ $git_status\
 $nodejs\
 $rust\
 $golang\
-[](fg:#212736 bg:#1d2230)\
+[](fg:#212736)\
 $memory_usage\
 $time\
-[ ](fg:#1d2230)\
 \n$character"""
 add_newline = true
 
