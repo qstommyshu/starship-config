@@ -15,6 +15,7 @@ $nodejs\
 $rust\
 $golang\
 [](fg:#212736)\
+$cmd_duration\
 $memory_usage\
 $time\
 \n$character"""
@@ -40,46 +41,52 @@ truncate_to_repo = false
 ## Git settings
 [git_branch]
 format = "[ $symbol $branch ]($style)"
-style = 'fg:#404040 bold bg:#C7C43F'
+style = "fg:#404040 bold bg:#C7C43F"
 
 [git_status]
 style = "fg:#404040 bold bg:#C7C43F"
-format = '[($all_status$ahead_behind )]($style)'
+format = "[($all_status$ahead_behind )]($style)"
 modified = "!${count}"
 untracked = "U${count}"
 deleted = "🗑${count} "
 renamed = "👅${count}"
 conflicted = "conflicted ${count}"
-ahead = '⇡${count}'
-diverged = '⇕⇡${ahead_count}⇣${behind_count}'
-behind = '⇣${count}'
-staged = '[++\($count\)](green)'
-stashed = 'stashed'
+ahead = "⇡${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+behind = "⇣${count}"
+staged = "[++($count)](green)"
+stashed = "stashed"
 
 [git_state]
-format = '[\($state( $progress_current of $progress_total)\)]($style) '
-cherry_pick = '[🍒 PICKING](bold red)'
+format = "[($state( $progress_current of $progress_total))]($style) "
+cherry_pick = "[🍒 PICKING](bold red)"
 
 ## Programming Languages
 [nodejs]
 style = "bg:#212736"
-format = '[ $symbol($version) ]($style)'
+format = "[ $symbol($version) ]($style)"
 
 [rust]
 style = "bg:#212736"
-format = '[ $symbol($version) ]($style)'
+format = "[ $symbol($version) ]($style)"
 
 [golang]
 style = "bg:#212736"
-format = '[ $symbol($version) ]($style)'
+format = "[ $symbol($version) ]($style)"
+
+[cmd_duration]
+min_time = 500
+format = " [$duration](bold red)"
+show_notifications = true
+min_time_to_notify = 45000
 
 ## Memory
 [memory_usage]
-format = '$symbol [${ram}( | ${swap})]($style)'
+format = "$symbol [${ram}( | ${swap})]($style)"
 disabled = false
 threshold = 80
-symbol = ''
-style = 'bold dimmed green'
+symbol = ""
+style = "bold dimmed green"
 
 [jobs]
 # doc: https://starship.rs/config/#jobs
